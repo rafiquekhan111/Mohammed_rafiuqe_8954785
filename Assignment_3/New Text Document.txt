@@ -1,0 +1,41 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+# Setting up the webdriver
+driver = webdriver.Chrome()
+
+#Navigating to facebook login page
+driver.get("https://www.wikipedia.org/")
+time.sleep(3)
+
+
+#Search any input in Search box
+search_wikipedia= driver.find_element(By.XPATH,"//input[@id='searchInput']")
+search_wikipedia.send_keys("Cricket")
+time.sleep(3)
+
+#Click on Search icon
+search_icon_click= driver.find_element(By.XPATH,"//*[@id='search-form']/fieldset/button")
+search_icon_click.click()
+time.sleep(3)
+
+#Click on History button click
+link_History_click= driver.find_element(By.XPATH,"/html/body/div[2]/div/nav/div/div/ul/li[2]")
+link_History_click.click()
+time.sleep(3)
+
+#Click on 'Origin' link
+link_Origin_click = driver.find_element(By.XPATH,"/html/body/div[2]/div/nav/div/div/ul/li[2]/ul/li[1]/a")
+link_Origin_click.click()
+time.sleep(3)
+
+#Click on MainMenu button
+menu_button = driver.find_element(By.XPATH,"//div[@class='vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right']")
+menu_button.click()
+time.sleep(3)
+
+#Click on FirstMenu
+first_menu_button = driver.find_element(By.XPATH, "//*[@id='n-mainpage-description']/a")
+first_menu_button.click()
+time.sleep(3)
